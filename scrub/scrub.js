@@ -155,24 +155,6 @@ function onLoad() {
 
 /****************************************************************************************************************************************************/
 
-let titleStage = 0;
-let titleInterval;
 
-const titleChange = () => {
-  titleInterval = setInterval(function(){
-    if (titleStage == 0) {
-      window.document.title = 'hi';
-      titleStage++;
-    } else if (titleStage == 1) {
-      window.document.title = 'hi';
-      titleStage++;
-    } else if (titleStage == 2) {
-      window.document.title = 'there';
-      titleStage = 0;
-    }
-  },1000 / 30);
-}
-
-titleChange();
 
 /****************************************************************************************************************************************************/
