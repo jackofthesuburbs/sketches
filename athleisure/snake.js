@@ -1,7 +1,4 @@
-// Daniel Shiffman
-// http://codingtra.in
-// http://patreon.com/codingtrain
-// Code for: https://youtu.be/40Me1-yAtTc
+
 
 function Snake() {
   // Snake position
@@ -39,12 +36,12 @@ function Snake() {
       var d = dist(this.x, this.y, pos.x, pos.y);
       if (d < 1) {
         console.log('starting over');
-        startOverSound.play();
-        music.rate(1);
-        fr = 1;
+        //startOverSound.play();
+        music.stop();
+        fr = 8;
         this.x = 0;
         this.y = 0;
-        this.xspeed = 1;
+        this.xspeed = 0;
         this.yspeed = 0;
         this.total = 0;
         this.tail = [];
