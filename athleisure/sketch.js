@@ -5,7 +5,7 @@ var h1;
 var albumart;
 var music;
 var musicRate = 1;
-var fr = 8;
+var fr = 4;
 
 // snake
 var s;               
@@ -29,9 +29,19 @@ function preload() {
 //setup stuff
 function setup() {
   canvas = createCanvas(400, 400);
-  canvas.position(windowWidth/2 - 200, windowHeight/2 - 250);
+  canvas.position(windowWidth/2 - 200, windowHeight/2 - 230);
   h1 = createElement('h1', '<iframe style="border: 0; width: 400px; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/track=952625283/size=small/bgcol=ffffff/linkcol=0687f5/artwork=none/transparent=true/" seamless><a href="http://jackofthesuburbs.bandcamp.com/track/reptilian-parametric">reptilian parametric by jack of the suburbs</a></iframe>');
-  h1.position(windowWidth/2 - 200, windowHeight/2 + 150);
+  h1.position(windowWidth/2 - 200, windowHeight/2 + 160);
+  
+  let text = createP("it\'s snake but when you eat the food it skips to<br> a random part in the song. use arrows to play.");
+  
+  text.position(windowWidth/2 - 200, windowHeight/2 - 325);
+  text.style("font-family", "monospace");
+  text.style("background-color", "#F20FD7");
+  text.style("color", "#FFFFFF");
+  text.style("font-size", "10pt");
+  text.style("padding", "10px");
+  
   
   //music.play();
   music.playMode('sustain');
@@ -44,10 +54,10 @@ function setup() {
   //
   button = createButton("play");
   button.mousePressed(togglePlaying);
-  button.position(windowWidth/2 - 200, windowHeight/2 - 280);
+  button.position(windowWidth/2 - 200, windowHeight/2 - 255);
   buttno = createButton("stop");
   buttno.mousePressed(stopPlaying);
-  buttno.position(windowWidth/2 - 155, windowHeight/2 - 280);
+  buttno.position(windowWidth/2 - 155, windowHeight/2 - 255);
   //
   s = new Snake();
   s.xspeed = 0;
@@ -81,7 +91,7 @@ function pickLocation() {
 // animation loop
 function draw() {
   background(albumart);
-  fill(255, 0, 255, 60);
+  fill(255, 0, 255, 20);
   rect(0, 0, width, height);
   var len = music.duration();
   
