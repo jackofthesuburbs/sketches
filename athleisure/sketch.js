@@ -27,7 +27,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(300, 300);
+  createCanvas(width, height);
   music.play();
   music.playMode('sustain');
   colorMode(HSB, 255);
