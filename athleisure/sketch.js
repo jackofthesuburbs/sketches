@@ -3,9 +3,6 @@
 // http://patreon.com/codingtrain
 // Code for: https://youtu.be/40Me1-yAtTc
 
-let osc;
-let playing = false;
-
 // The snake
 var s;
 // The scale of the grid
@@ -27,7 +24,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(width, height);
+  createCanvas(windowWidth, windowHeight);
   music.play();
   music.playMode('sustain');
   colorMode(HSB, 255);
