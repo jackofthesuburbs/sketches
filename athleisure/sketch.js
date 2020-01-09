@@ -116,9 +116,6 @@ if (s.death) {
 
 // Moving the snake
 function keyPressed() {
-  //if (!hello.isPlaying()) {
-  //hello.play();
-  //}
 
   if (keyCode === UP_ARROW) {
     s.dir(0, -1);
@@ -133,4 +130,5 @@ function keyPressed() {
   if (key == ' ') {
     s.total++;
   }
+  return false;
 }
