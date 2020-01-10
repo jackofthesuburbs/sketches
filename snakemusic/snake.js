@@ -38,7 +38,7 @@ function Snake() {
         console.log('starting over');
         //startOverSound.play();
         music.stop();
-        fr = 8;
+        fr = 4;
         this.x = 0;
         this.y = 0;
         this.xspeed = 0;
