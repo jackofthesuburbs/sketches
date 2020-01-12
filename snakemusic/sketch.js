@@ -5,17 +5,18 @@ var h1;
 var albumart;
 var music;
 var musicRate = 1;
-var fr = 4;
+var fr = 5;
 
 // snake
 var s;               
 
 // scale of the grid
-var scl = 20;
+var scl = 50;
 var cols;
 var rows;
 var button;
 var buttno;
+var butnot;
 
 // food location
 var food;
@@ -28,19 +29,28 @@ function preload() {
 
 //setup stuff
 function setup() {
-  canvas = createCanvas(400, 400);
-  canvas.position(windowWidth/2 - 200, windowHeight/2 - 230);
-  h1 = createElement('h1', '<iframe style="border: 0; width: 400px; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/track=952625283/size=small/bgcol=ffffff/linkcol=0687f5/artwork=none/transparent=true/" seamless><a href="http://jackofthesuburbs.bandcamp.com/track/reptilian-parametric">reptilian parametric by jack of the suburbs</a></iframe>');
-  h1.position(windowWidth/2 - 200, windowHeight/2 + 160);
+  canvas = createCanvas(windowWidth, windowHeight);
+  //canvas.position(32, 135);
+  h1 = createElement('h1', '<iframe style="border: 0; width: 400px; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/track=952625283/size=small/bgcol=ffffff/linkcol=f20fd7/artwork=none/transparent=true/" seamless><a href="http://jackofthesuburbs.bandcamp.com/track/reptilian-parametric">reptilian parametric by jack of the suburbs</a></iframe>');
+  h1.position(32, 150);
   
-  let text = createP("it\'s snake but when you eat the food it skips to<br> a random part in the song. use arrows to play.");
+  let text = createP("s-n-a-k-e m-u-s-i-c");
   
-  text.position(windowWidth/2 - 200, windowHeight/2 - 325);
+  text.position(30, 30);
   text.style("font-family", "monospace");
   text.style("background-color", "#F20FD7");
   text.style("color", "#FFFFFF");
-  text.style("font-size", "10pt");
+  text.style("font-size", "12pt");
   text.style("padding", "10px");
+  
+  
+  let texty = createP("it\'s snake but when you eat the food<br> it skips to a random part in the song. <br><br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp use arrows to move.");
+           
+  texty.position(32, 80);
+  //texty.style("background-color", "#FFFFFF");
+  texty.style("font-family", "monospace");
+  texty.style("color", "#F20FD7");
+  texty.style("font-size", "10pt");
   
   
   //music.play();
@@ -54,10 +64,13 @@ function setup() {
   //
   button = createButton("play");
   button.mousePressed(togglePlaying);
-  button.position(windowWidth/2 - 200, windowHeight/2 - 255);
+  button.position(30, 137);
   buttno = createButton("stop");
   buttno.mousePressed(stopPlaying);
-  buttno.position(windowWidth/2 - 155, windowHeight/2 - 255);
+  buttno.position(75, 137);
+  //butnot = createButton("bandcamp");
+  //butnot.mousePressed(stopPlaying);
+  //butnot.position(330, 67);
   //
   s = new Snake();
   s.xspeed = 0;
@@ -90,7 +103,7 @@ function pickLocation() {
 
 // animation loop
 function draw() {
-  background(albumart);
+  background(255);
   fill(255, 0, 255, 20);
   rect(0, 0, width, height);
   var len = music.duration();
@@ -144,5 +157,7 @@ function keyPressed() {
     s.total++;
   }
   return false;
+  
+  
 }
 
