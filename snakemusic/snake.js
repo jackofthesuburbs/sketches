@@ -15,7 +15,7 @@ function Snake() {
   // Check to see if it is eating food
   this.eat = function(pos) {
     var d = dist(this.x, this.y, pos.x, pos.y);
-    if (d < 1) {
+    if (d < 10) {
       this.total++;
       return true;
     } else {
@@ -31,6 +31,23 @@ function Snake() {
 
   // Check to see if it hits itself
   this.death = function() {
+   
+  //NEW CODE  
+    
+    if(this.x >= width || this.y >= height || this.x < 0 || this.y < 0){
+      console.log('starting over');
+      music.stop();
+      fr = 5
+      this.x = 0
+      this.y = 0;
+      this.xspeed = 0;
+      this.yspeed = 0;
+      this.total = 0;
+      this.tail = [];
+    }
+  
+    //NEW CODE END
+    
     for (var i = 0; i < this.tail.length; i++) {
       var pos = this.tail[i];
       var d = dist(this.x, this.y, pos.x, pos.y);
@@ -38,7 +55,7 @@ function Snake() {
         console.log('starting over');
         //startOverSound.play();
         music.stop();
-        fr = 4;
+        fr = 5;
         this.x = 0;
         this.y = 0;
         this.xspeed = 0;
@@ -65,17 +82,21 @@ function Snake() {
     this.y = this.y + this.yspeed * scl;
 
     // Keep on screen
-    if (this.x > width - scl) {
-      this.x = 0;
-    } else if (this.x < 0) {
-      this.x = width - scl;
-    }
-    if (this.y > height - scl) {
-      this.y = 0;
-    } else if (this.y < 0) {
-      this.y = height - scl;
-    }
+    //if (this.x > width - scl) {
+      //this.x = 0;
+    //} else if (this.x < 0) {
+     // this.x = width - scl;
+    //}
+    //if (this.y > height - scl) {
+    //  this.y = 0;
+    //} else if (this.y < 0) {
+    //  this.y = height - scl;
+    //}
   };
+    
+  
+  
+  
 
   // Draw snake
   this.show = function() {
