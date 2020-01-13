@@ -33,7 +33,7 @@ function setup() {
   text.style("font-size", "12pt");
   text.style("padding", "10px");
   
-  let texty = createP("move mouse to control the <br>sine-wave theramin.<br><br>x axis = pitch 30-3000hz<br>y axis = volume quiet-loud)");
+  let texty = createP("move mouse to control the <br>sine-wave theramin.<br><br>x axis = pitch 30-3000hz<br>y axis = volume quiet-loud");
            
   texty.position(32, 80);
   //texty.style("background-color", "#FFFFFF");
