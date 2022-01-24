@@ -31,7 +31,7 @@ function preload() {
 function setup() {
   canvas = createCanvas(windowWidth, windowHeight);
   //canvas.position(32, 135);
-  h1 = createElement('h1', '<iframe style="border: 0; width: 400px; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/track=952625283/size=small/bgcol=ffffff/linkcol=f20fd7/artwork=none/transparent=true/" seamless><a href="http://jackofthesuburbs.bandcamp.com/track/reptilian-parametric">reptilian parametric by jack of the suburbs</a></iframe>');
+  h1 = createElement('h1', '<iframe style="border: 0; width: 400px; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/track=952625283/size=small/bgcol=000000/linkcol=f20fd7/artwork=none/transparent=true/" seamless><a href="http://jackofthesuburbs.bandcamp.com/track/reptilian-parametric">reptilian parametric by jack of the suburbs</a></iframe>');
   h1.position(32, 150);
   
   let text = createP("s-n-a-k-e m-u-s-i-c");
@@ -103,7 +103,8 @@ function pickLocation() {
 
 // animation loop
 function draw() {
-  background(255);
+  //background(255);
+  background(0);
   fill(255, 0, 255, 20);
   rect(0, 0, width, height);
   var len = music.duration();
