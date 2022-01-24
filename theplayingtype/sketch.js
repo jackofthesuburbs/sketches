@@ -113,7 +113,8 @@ function mousePressed() {
 var a;
 var b;
 function draw() {
-  background(255);
+  //background(255);
+  background(0);
   
   if (soundi.isPlaying()) {
         background(random(255),random(255),random(255));
